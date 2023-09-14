@@ -8,6 +8,13 @@ pipeline {
                 checkout scm
             }
         }
+
+        stage('Build') {
+            steps {
+                // Build the Java application using Maven
+                sh 'mvn clean package'
+            }
+        }
         
         stage('Build and Push Docker Image') {
             steps {

@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/Test-1.0-SNAPSHOT.jar .
 
 # Expose a port that your application listens on (e.g., 8080)
-EXPOSE 8080
+EXPOSE 8081
 
 # Define the command to run your Java application
 CMD ["java", "-jar", "Test-1.0-SNAPSHOT.jar"]

@@ -1,6 +1,5 @@
 pipeline {
-    agent any
-    
+    agent any    
     stages {
         stage('Checkout') {
             steps {
@@ -8,14 +7,12 @@ pipeline {
                 checkout scm
             }
         }
-
         stage('Build') {
             steps {
                 // Build the Java application using Maven
                 sh 'mvn clean install'
             }
         }
-        
         stage('Build and Push Docker Image') {
             steps {
                 script {
@@ -25,8 +22,7 @@ pipeline {
                     }
                 }
             }
-        }
-        
+        }        
         stage('Deploy Docker Container') {
             steps {
                 script {

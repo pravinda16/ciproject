@@ -32,7 +32,7 @@ pipeline {
                 script {
                     def imageName = "pravidah/java-app:${env.BUILD_ID}"
                     // Pull and run the Docker container
-                    docker.image(imageName).withRun('-p 8080:3000') {
+                    docker.image(imageName).withRun('-p 8081:3000') {
                         // Additional setup or tests can be added here
                     }
                 }
